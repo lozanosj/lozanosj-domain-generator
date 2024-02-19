@@ -9,21 +9,24 @@
 let pronoun = ["the", "our"];
 let adj = ["great", "big"];
 let noun = ["jogger", "racoon"];
+let domain = [".com", ".edu", ".ve", ".net"];
 
-let domainGenerator = function(pronoun, adj, noun){
+let domainGenerator = function(pronoun, adj, noun, domain){
 
   let website = [];
 
   for (let i = 0; i < pronoun.length; i++) {
     for (let j = 0; j < adj.length; j++){
       for(let k = 0; k < noun.length; k++){
-        website.push(pronoun[i] + adj[j] + noun[k] + ".com");
+        for(let l = 0; l < domain.length; l++){
+          website.push(pronoun[i] + adj[j] + noun[k] + domain[l]);
+        }
       }
     }
   }
   console.log(website);
 };
 
-domainGenerator(pronoun, adj, noun);
+domainGenerator(pronoun, adj, noun, domain);
 
 /* eslint-enable no-console */
